@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Список дел</title>
+  </head>
+  <body>
+    <header>
+      <h1>Список дел</h1>
+    </header>
+    <main class="container">
+      <div class="search-bar">
+        <input type="text" name="task" placeholder="Название новой задачи" class="input"/>
+        <button type="button" id="addTask" disabled>+</button>
+      </div>
+      <div class="radio">
+        <input type="radio" id="all-tasks" name="mark" value="all" checked />
+        <label for="all-tasks">Все</label>
+        <input type="radio" id="marked-tasks" name="mark" value="marked" />
+        <label for="marked-tasks">Выполненные</label>
+        <input type="radio" id="unmarked-tasks" name="mark" value="unmarked" />
+        <label for="unmarked-tasks">Невыполненные</label>
+      </div>
+      <div class="checkbox-list">
+        <!--<label class="search-checkbox">
+            <div>
+            <input type="checkbox" />
+            <span class="task-text">New task</span>
+            </div>
+            <button class="delete" type="button">
+                <img src="red-trashcan.png"></img>
+            </button>
+          </label>-->
+      </div>
+      <p id="remaining-tasks"></p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

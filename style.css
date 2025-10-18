@@ -1,0 +1,174 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
+header {
+  height: 10vh;
+  background-color: darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 120%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 25px;
+  margin: 10%;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+button,
+input {
+  padding: 0.6em 1.2em;
+  font-weight: 500;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+input[type="text"] {
+  width: 50%;
+}
+button:hover,
+input:hover {
+  border-color: #000;
+}
+
+.delete {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.delete:hover {
+  border-color: none;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-checkbox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: black;
+  padding: 0;
+  margin: 0 8px;
+}
+
+#addTask:disabled,
+input:disabled,
+button:disabled {
+  cursor: not-allowed;
+  border: none;
+}
+
+.search-checkbox.checked-task div .task-text {
+  color: darkgray;
+}
+
+.search-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  transform-origin: left;
+  transform: translateX(0);
+}
+/* анимации для задач*/
+.task-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.task-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.task-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.task-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+#addTask {
+  position: relative;
+}
+
+.loader {
+  border: 3px solid #cdcdcd;
+  border-radius: 50%;
+  border-block-end-color: #8a8a8a;
+  animation-name: loading;
+  inline-size: 20px;
+  aspect-ratio: 1/1;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  position: absolute;
+}
+#addTask .loader {
+  bottom: 25%;
+  right: 25%;
+}
+
+.delete .loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-block-end: 3px solid #ff4444;
+  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+}
+
+@keyframes loading {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
